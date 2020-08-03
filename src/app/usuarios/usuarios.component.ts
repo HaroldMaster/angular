@@ -10,19 +10,20 @@ import {AjaxPeticiones} from '../services/ajax.service'
 export class UsuariosComponent implements OnInit {
   public user : any;
   constructor(
-    private _peticiones : AjaxPeticiones
+    public _peticiones : AjaxPeticiones
 
   ) { }
 
   ngOnInit(): void {
-    this._peticiones.getUser().subscribe(
+    console.log(this._peticiones.getUser);
+   /* this._peticiones.getUser().subscribe(
       (result:any) => {
         this.user = result.data;
       },
       error =>{
         console.log(<any>error)
       }
-    );
+    );*/
   }
 
 }
