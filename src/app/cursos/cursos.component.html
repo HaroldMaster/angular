@@ -1,0 +1,29 @@
+
+<h1>Que materias enseñamos?</h1>
+<li *ngFor="let curso of listaCursos">
+  {{ curso.nombreCurso }}
+</li>
+<h1>Lista de cursos</h1>
+<ul>
+  <li *ngFor="let curso of listaCursos" >
+    El curso de {{ curso.nombreCurso }} empieza en {{ curso.fechaInicial }} y
+    tiene un valor de 
+    <span *ngIf="curso.valorCurso<30"
+    [style.background]="'blue'"
+    >{{ curso.valorCurso }}$</span>
+    <span *ngIf="curso.valorCurso>=30"
+    [style.background]="'red'"
+    >{{ curso.valorCurso }}$</span>
+    
+  </li>
+</ul>
+<h1>Añadir un curso</h1>
+<p>Ingrese el nombre del curso</p>
+<input type="text" [(ngModel)]="nuevoNombre" />
+<p>Ingrese la fecha de inicio del curso</p>
+<input type="text" [(ngModel)]="nuevaFecha" />
+<p>Ingrese el valor del curso</p>
+<input type="text" [(ngModel)]="nuevoValor"/>
+<p>
+  <button (click)="anadirCurso()">Añadir</button>
+</p>
