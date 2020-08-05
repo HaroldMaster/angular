@@ -5,13 +5,18 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AjaxPeticiones {
     public url : string;
+    public getUser : any; 
+    public idUser : any;
     constructor(
         public _http : HttpClient
     ){
-        this.url = "https://reqres.in/"
+        
+        
     }
-    getUser(){
-        console.log(this._http.get(this.url+"api/users/2"));
-        return this._http.get(this.url+"api/users/2");
+    ngOnInit(){
+        this.url = "https://reqres.in/";
+        this.getUser = this._http.get(this.url+'api/users/'+this.idUser);
     }
+    
+    
 }

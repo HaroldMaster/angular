@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormularioComponent } from './formulario/formulario.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CursosComponent,
     CabeceraComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

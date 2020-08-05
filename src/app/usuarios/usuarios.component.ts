@@ -9,13 +9,22 @@ import {AjaxPeticiones} from '../services/ajax.service'
 })
 export class UsuariosComponent implements OnInit {
   public user : any;
+  public idUsr: any;
+  public cadHttp: any;
   constructor(
     public _peticiones : AjaxPeticiones
 
-  ) { }
+  ) {
+    this.idUsr=2
+   this._peticiones.idUser=this.idUsr;
+   
+   //this.cadHttp = this._peticiones.getUser + this.idUsr;
+   
+   console.log(this._peticiones.getUser);
+   }
 
   ngOnInit(): void {
-    console.log(this._peticiones.getUser);
+    
    /* this._peticiones.getUser().subscribe(
       (result:any) => {
         this.user = result.data;
@@ -25,5 +34,11 @@ export class UsuariosComponent implements OnInit {
       }
     );*/
   }
-
+  ngDoCheck(){
+    console.log(this._peticiones.idUser);
+    return true;
+  }
+  nuevaBusqueda(){
+    
+  }
 }

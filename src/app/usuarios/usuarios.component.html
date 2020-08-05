@@ -1,6 +1,21 @@
 <p>usuarios works!</p>
-<div *ngIf="_peticiones.getUser() | async as user">
-    hola
-    <p>El nombre del usuario {{user.data.id}} es {{user.data.first_name}}</p>
-<img src="{{user.data.avatar}}" alt="">
+<p>Escriba el id del usuario que desea consultar</p>
+<input type="text" [(ngModel)]="_peticiones.idUser" >
+<div [ngSwitch]="_peticiones.idUser">
+    <div *ngSwitchCase=2>
+        <div *ngIf="_peticiones.getUser | async as user ">
+            <p>El nombre del usuario {{user.data.id}} es {{user.data.first_name}} {{ngDoCheck()}}</p>
+        <img src="{{user.data.avatar}}" alt="">
+        </div>
+    </div>
+    <div *ngSwitchCase=3>
+        <div *ngIf="_peticiones.getUser | async as user ">
+            <p>El nombre del usuario {{user.data.id}} es {{user.data.first_name}} {{ngDoCheck()}}</p>
+        <img src="{{user.data.avatar}}" alt="">
+        </div>
+    </div>
+
 </div>
+
+
+
