@@ -15,8 +15,8 @@ export class UsuariosComponent implements OnInit {
     public _peticiones : AjaxPeticiones
 
   ) {
-    this.idUsr=2
-   this._peticiones.idUser=this.idUsr;
+   /* this.idUsr=2
+   this._peticiones.idUser=this.idUsr;*/
    
    //this.cadHttp = this._peticiones.getUser + this.idUsr;
    
