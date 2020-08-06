@@ -15,6 +15,7 @@ export class UsuariosComponent implements OnInit {
     public _peticiones : AjaxPeticiones
 
   ) {
+    this._peticiones.setIdUser(3);
    /* this.idUsr=2
    this._peticiones.idUser=this.idUsr;*/
    
@@ -24,7 +25,7 @@ export class UsuariosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+   
    /* this._peticiones.getUser().subscribe(
       (result:any) => {
         this.user = result.data;
@@ -36,9 +37,11 @@ export class UsuariosComponent implements OnInit {
   }
   ngDoCheck(){
     console.log(this._peticiones.idUser);
-    return true;
+    
+    
   }
   nuevaBusqueda(){
-    
+    this._peticiones.setIdUser(this.idUsr);
+    this._peticiones.getUser;
   }
 }
