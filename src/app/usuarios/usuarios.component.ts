@@ -42,6 +42,6 @@ export class UsuariosComponent implements OnInit {
   }
   nuevaBusqueda(){
     this._peticiones.setIdUser(this.idUsr);
-    this._peticiones.getUser;
+    
   }
 }

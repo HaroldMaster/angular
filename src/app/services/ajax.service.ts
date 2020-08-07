@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 export class AjaxPeticiones {
     public url : string = "https://reqres.in/";;
     public idUser : any = 3;
-    public getUser : any = this._http.get(this.url+'api/users/'+this.idUser);; 
+    public getUser : any = this._http.get(this.url+'api/users/'+this.idUser);
     
     constructor(
         public _http : HttpClient
@@ -22,6 +22,7 @@ export class AjaxPeticiones {
     }
     setIdUser (userid){
         this.idUser=userid;
+        this.getUser = this._http.get(this.url+'api/users/'+this.idUser);
     }
     
 }
